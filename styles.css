@@ -1,0 +1,137 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Tiny5", sans-serif;
+  font-size: 16px;
+  background-color: rgb(31, 29, 29);
+  color: white;
+}
+
+header {
+  width: 100%;
+  margin-bottom: 4rem;
+}
+
+.top-heading {
+  margin-top: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.again {
+  background-color: rgb(255, 255, 255);
+  color: black;
+  width: 150px;
+  height: 4rem;
+  font-size: 30px;
+  cursor: pointer;
+  font-family: "Tiny5", sans-serif;
+}
+
+.again:hover {
+  background-color: rgb(164, 155, 155);
+  color: black;
+}
+
+.left {
+  font-size: 20px;
+}
+
+.heading {
+  text-align: center;
+  font-size: 60px;
+}
+
+.center-box {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+hr {
+  padding: 2px;
+  background-color: white;
+}
+
+.boxGuess {
+  position: absolute;
+  width: 7rem;
+  height: 7rem;
+  background-color: white;
+  color: black;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-size: 4rem;
+  left: 45%;
+  top: -50px;
+}
+
+.bottom-box {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left-side {
+  margin-left: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  width: 40%;
+  height: 300px;
+}
+
+.right-side {
+  margin-right: 30px;
+  width: 40%;
+  height: 300px;
+  display: flex;
+  align-items: left;
+  flex-direction: column;
+}
+
+.guess {
+  font-size: 50px;
+  font-weight: bold;
+  color: white;
+  font-family: "Tiny5", sans-serif;
+  width: 70%;
+  height: 40%;
+  border: 2px solid white;
+  text-align: center;
+  background-color: rgb(31, 29, 29);
+}
+
+.check {
+  background-color: rgb(255, 255, 255);
+  color: black;
+  width: 150px;
+  height: 4rem;
+  font-size: 30px;
+  cursor: pointer;
+  font-family: "Tiny5", sans-serif;
+}
+
+.message,
+.score,
+.highscore {
+  font-size: 30px;
+}
+
+.message {
+  margin-top: 10%;
+}
+
+.score {
+  margin-top: 10%;
+}
+
+.check:hover {
+  background-color: rgb(164, 155, 155);
+  color: black;
+}
