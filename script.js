@@ -1,5 +1,4 @@
 const saveScore = {
-  highscore: 0,
   randomNumber: Math.floor(Math.random() * 100) + 1,
   win: false,
 };
@@ -26,16 +25,16 @@ async function check() {
     again();
     return;
   } else {
-    const highscore = score;
+    const highscore = Number(document.querySelector('.highscore').textContent.split(" ")[2]);
     if (guess === saveScore.randomNumber) {
       saveScore.win = true;
       document.querySelector("body").style.backgroundColor =
         "rgb(20, 199, 110)";
       document.querySelector(".message").textContent = "Congratulation !!!";
       document.querySelector(".boxGuess").textContent = guess;
-      if (highscore > saveScore.highscore) {
+      if (score > highscore) {
         document.querySelector(".highscore").textContent =
-          "🥇 Highscore: " + String(highscore);
+          "🥇 Highscore: " + String(score);
       }
     } else {
       if (guess > saveScore.randomNumber)
