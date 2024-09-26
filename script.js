@@ -21,17 +21,23 @@ async function check() {
     document.querySelector(".message").textContent = "You loss !!!";
     document.querySelector("body").style.backgroundColor = "red";
     document.querySelector(".score").textContent = "💯 Score: 0";
+    document.querySelector(".guess").style.backgroundColor = "red";
     await sleep(3000);
     again();
     return;
   } else {
-    const highscore = Number(document.querySelector('.highscore').textContent.split(" ")[2]);
+    const highscore = Number(
+      document.querySelector(".highscore").textContent.split(" ")[2]
+    );
     if (guess === saveScore.randomNumber) {
       saveScore.win = true;
       document.querySelector("body").style.backgroundColor =
         "rgb(20, 199, 110)";
       document.querySelector(".message").textContent = "Congratulation !!!";
       document.querySelector(".boxGuess").textContent = guess;
+      document.querySelector(".guess").style.backgroundColor =
+        "rgb(20, 199, 110)";
+      document.querySelector(".boxGuess").style.width = "8rem";
       if (score > highscore) {
         document.querySelector(".highscore").textContent =
           "🥇 Highscore: " + String(score);
@@ -49,9 +55,11 @@ function again() {
   saveScore.randomNumber = Math.floor(Math.random() * 20) + 1;
   document.querySelector(".boxGuess").textContent = "?";
   document.querySelector(".message").textContent = "Start guessing...";
-  document.querySelector(".score").textContent = "💯 Score: 100";
+  document.querySelector(".score").textContent = "💯 Score: 30";
   document.querySelector(".guess").value = "";
   document.querySelector("body").style.backgroundColor = "rgb(31, 29, 29)";
+  document.querySelector(".guess").style.backgroundColor = "rgb(31, 29, 29)";
+  document.querySelector(".boxGuess").style.width = "7rem";
 }
 
 //listen event
