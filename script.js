@@ -8,6 +8,10 @@ function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
+const setMessage = (message) => {
+  document.querySelector(".message").textContent = message;
+};
+
 async function check() {
   if (saveScore.win) {
     again();
@@ -18,7 +22,7 @@ async function check() {
   const eScore = document.querySelector(".score");
   const score = Number(eScore.textContent.split(" ")[2]);
   if (score - 1 <= 0) {
-    document.querySelector(".message").textContent = "You loss !!!";
+    setMessage("You loss !!!");
     document.querySelector("body").style.backgroundColor = "red";
     document.querySelector(".score").textContent = "💯 Score: 0";
     document.querySelector(".guess").style.backgroundColor = "red";
@@ -33,7 +37,7 @@ async function check() {
       saveScore.win = true;
       document.querySelector("body").style.backgroundColor =
         "rgb(20, 199, 110)";
-      document.querySelector(".message").textContent = "Congratulation !!!";
+      setMessage("Congratulation !!!");
       document.querySelector(".boxGuess").textContent = guess;
       document.querySelector(".guess").style.backgroundColor =
         "rgb(20, 199, 110)";
@@ -43,9 +47,8 @@ async function check() {
           "🥇 Highscore: " + String(score);
       }
     } else {
-      if (guess > saveScore.randomNumber)
-        document.querySelector(".message").textContent = "Too high!!!";
-      else document.querySelector(".message").textContent = "Too low!!!";
+      if (guess > saveScore.randomNumber) setMessage("Too high!!!");
+      else setMessage("Too low!!!");
       eScore.textContent = "💯 Score: " + String(score - 1);
     }
   }
@@ -54,7 +57,7 @@ async function check() {
 function again() {
   saveScore.randomNumber = Math.floor(Math.random() * 20) + 1;
   document.querySelector(".boxGuess").textContent = "?";
-  document.querySelector(".message").textContent = "Start guessing...";
+  setMessage("Start guessing...");
   document.querySelector(".score").textContent = "💯 Score: 30";
   document.querySelector(".guess").value = "";
   document.querySelector("body").style.backgroundColor = "rgb(31, 29, 29)";
